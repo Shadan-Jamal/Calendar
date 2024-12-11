@@ -118,6 +118,7 @@ const CalendarGrid = ({
                                     <EventListForSelectedDate
                                         idForSelectedDate={selectedDate.id}
                                         eventList={eventList}
+                                        setEventList={setEventList}
                                     />
                                 </PopoverContent>
                             </div>

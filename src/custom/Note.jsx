@@ -2,12 +2,9 @@ import React from 'react'
 import {
     AlertDialog,
     AlertDialogAction,
-    AlertDialogCancel,
     AlertDialogContent,
     AlertDialogDescription,
     AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
   
@@ -16,7 +13,6 @@ const Note = () => {
     <AlertDialog>
     <AlertDialogTrigger className='text-white border-[1px] px-4 rounded-md py-1'>Note</AlertDialogTrigger>
         <AlertDialogContent>
-            {/* <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle> */}
             <AlertDialogDescription>
                 <div className='w-full h-fit flex flex-col justify-center items-center gap-2'>
                   <div className='flex justify-start items-center w-full gap-3'>
@@ -33,17 +29,9 @@ const Note = () => {
                     </div>
                   </div>
 
-                  <div className='flex justify-start items-center w-full gap-3'>
-                    <div className='w-4 h-4 rounded-full bg-zinc-800'></div>
-                    <div className='border-black w-full font-bold'>
-                      This represents the selected date.
-                    </div>
-                  </div>
-
                 </div>
             </AlertDialogDescription>
             <AlertDialogFooter>
-            {/* <AlertDialogCancel>Cancel</AlertDialogCancel> */}
             <AlertDialogAction>OK</AlertDialogAction>
             </AlertDialogFooter>
         </AlertDialogContent>

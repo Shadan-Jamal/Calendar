@@ -6,28 +6,41 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
+import { useRef } from "react";
+import { CiBookmarkRemove } from "react-icons/ci";
 import { Button } from "@/components/ui/button"
 import { useState } from "react";
   
 
-const EventListForSelectedDate = ({eventList, idForSelectedDate}) => {
+const EventListForSelectedDate = ({eventList,setEventList, idForSelectedDate}) => {
   const [events, setEvents] = useState([{}]);
+  const eventDate = useRef(idForSelectedDate);
 
-  const filterEvents = () => {
+  const filterEventsForSelectedDate = () => {
     let currEvents = [...eventList];
     currEvents = currEvents.filter((item) => item.id === idForSelectedDate)
     setEvents(currEvents);
   };
   
+  const removeEvent = (eventId) => {
+    console.log(eventList);
+    console.log(events);
+    // Filtering out the event with the specified ID from eventList
+    setEventList((prev) => prev.filter((item) => item.id !== eventId));
+
+    // Updating the local events list for the selected date
+    setEvents((prev) => prev.filter((item) => item.id !== eventId));
+  };
+
   return (
     <Sheet>
-        <SheetTrigger><
-          Button onClick={filterEvents} variant="secondary">Check Events</Button>
+        <SheetTrigger>
+          <Button onClick={filterEventsForSelectedDate} variant="secondary">Check Events</Button>
         </SheetTrigger>
         <SheetContent side="bottom" className="max-h-[40dvh]">
             <SheetHeader>
             <SheetTitle className="w-full text-start font-bold text-3xl">
-              Events for {events[0].id}
+              Events for {eventDate.current}
             </SheetTitle>
             <SheetDescription className="p-4">
                 {events.map((e, index) => {
@@ -45,10 +58,11 @@ const EventListForSelectedDate = ({eventList, idForSelectedDate}) => {
                               return (
                                   <div key={`${item.title} ${index}`}
                                   className="flex flex-row justify-between items-center gap-5 rounded-md p-2 bg-white"
-                              >
+                                  >
                                   <p className="font-bold text-black">{item.title}</p>
                                   <p className="text-gray-700">{item.description}</p>
                                   <p className="text-gray-500">{item.timings}</p>
+                                  <CiBookmarkRemove onClick={() => removeEvent(e.id)} className="text-black hover:cursor-pointer" size={"2rem"} />
                                   </div>
                               )
                           })}
