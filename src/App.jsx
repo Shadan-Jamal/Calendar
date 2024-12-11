@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './custom/Header'
 import Calendar from './custom/Calendar'
+import EventSidePanel from './custom/EventSidePanel';
+import { EventPanelProvider } from '@/context/EventPanelContext';
 
-const App = () => { 
+const App = () => {
   return (
-    <div className='w-screen h-[100dvh] bg-zinc-700 overflow-x-hidden'>
-      <Header />
-      <Calendar />
-    </div>
+    <EventPanelProvider>
+      <div className='w-screen h-[100dvh] bg-zinc-700 overflow-x-hidden'>
+        <Header />
+        <Calendar />
+        <EventSidePanel />
+      </div>
+    </EventPanelProvider>
   )
 }
 

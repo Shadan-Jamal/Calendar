@@ -1,5 +1,10 @@
 import { Button } from '@/components/ui/button'
 import React from 'react'
+import { 
+  FaAngleLeft, 
+  FaAngleRight,
+  FaAngleDoubleLeft,
+  FaAngleDoubleRight } from "react-icons/fa";
 
 const CalendarHeader = ({month,year,changeMonth}) => {
 
@@ -10,10 +15,12 @@ const CalendarHeader = ({month,year,changeMonth}) => {
               {`${month}, ${year}`}
             </h1>
         </div>
-        <div className='space-x-7'>
-            <Button variant="secondary" onClick={() => changeMonth("prev")}> Previous </Button>
+        <div className='space-x-3'>
+            <Button variant="secondary" onClick={() => changeMonth("prevYear")}> <FaAngleDoubleLeft size={"1rem"}/> </Button>
+            <Button variant="secondary" onClick={() => changeMonth("prev")}> <FaAngleLeft size={"1rem"}/> </Button>
             <Button variant="secondary" onClick={() => changeMonth()}> Today </Button>
-            <Button variant="secondary" onClick={() => changeMonth("next")}> Next </Button>
+            <Button variant="secondary" onClick={() => changeMonth("next")}> <FaAngleRight size={"1rem"}/> </Button>
+            <Button variant="secondary" onClick={() => changeMonth("nextYear")}> <FaAngleDoubleRight size={"1rem"}/> </Button>
         </div>
     </div>
   )

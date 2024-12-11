@@ -4,7 +4,9 @@ import {
     startOfMonth,
     addMonths, 
     subMonths, 
-    getDaysInMonth} from "date-fns";
+    getDaysInMonth,
+    addYears,
+    subYears} from "date-fns";
 
 export default function useCurrentDate(selectedMonthDirection){
     const [currentDate , setCurrentDate] = useState(new Date());
@@ -18,8 +20,14 @@ export default function useCurrentDate(selectedMonthDirection){
         if(selectedMonthDirection.direction === "prev"){
             setCurrentDate((prevDate) => subMonths(prevDate,1));
         }
+        else if(selectedMonthDirection.direction === "prevYear"){
+            setCurrentDate((prevDate) => subYears(prevDate,1))
+        }
         else if(selectedMonthDirection.direction === "next"){
             setCurrentDate((prevDate) => addMonths(prevDate,1));
+        }
+        else if(selectedMonthDirection.direction === "nextYear"){
+            setCurrentDate((prevDate) => addYears(prevDate,1))
         }
         else{
             setCurrentDate(new Date());
