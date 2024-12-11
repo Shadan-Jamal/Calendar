@@ -1,21 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { format, getMonth } from 'date-fns'
 import React from 'react'
-
-const MONTHS = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December"
-];
 
 const CalendarHeader = ({month,year,changeMonth}) => {
 
@@ -27,8 +11,9 @@ const CalendarHeader = ({month,year,changeMonth}) => {
             </h1>
         </div>
         <div className='space-x-7'>
-            <Button onClick={() => changeMonth("prev")}> Previous </Button>
-            <Button onClick={() => changeMonth("next")}> Next </Button>
+            <Button variant="secondary" onClick={() => changeMonth("prev")}> Previous </Button>
+            <Button variant="secondary" onClick={() => changeMonth()}> Today </Button>
+            <Button variant="secondary" onClick={() => changeMonth("next")}> Next </Button>
         </div>
     </div>
   )

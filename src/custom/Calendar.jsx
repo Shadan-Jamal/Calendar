@@ -1,28 +1,30 @@
 import { useEffect, useState } from "react";
 import CalendarBody from "./CalendarBody";
 import CalendarHeader from "./CalendarHeader";
+import EventSidePanel from "./EventSidePanel";
 import useCurrentDate from "@/hooks/useCurrentDate";
 import { getDay, getMonth, getYear } from "date-fns";
 
 const DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
 const Calendar = () => {
-    const [selectedDate,setSelectedDate] = useState({ 
+    const [curretDate,setCurrentDate] = useState({ 
         day : getDay(new Date()), 
         month : getMonth(new Date()), 
-        year: getYear(new Date())})
+        year: getYear(new Date())
+    });
 
     const [selectedMonthDirection,setSelectedMonthDirection] = useState({counter : 0 , direction : ""})
-    const [selectedMonthGaps,setSelectedMonthGaps] = useState(0);
-
     const {
         currentDay,
         currentMonth,
         currentYear,
         startingDayOfMonth,
-        endingDayOfMonth } = useCurrentDate(selectedMonthDirection);
-
-    
+        numberOfDays } = useCurrentDate(selectedMonthDirection);
+        
+    const [selectedMonthGaps,setSelectedMonthGaps] = useState(
+        getDay(new Date())
+    );
     const changeMonth = (dir) => {
         if(dir === "prev"){
             setSelectedMonthDirection((prev) => {
@@ -34,18 +36,23 @@ const Calendar = () => {
                 return {...prev, counter : prev.counter + 1, direction : dir}
             });
         }
+        else{
+            setSelectedMonthDirection((prev) => {
+                return {...prev, counter : 0, direction : ""}
+            })
+        }
     }
 
     useEffect(() => {
-        setSelectedDate({
+        setCurrentDate({
             day : currentDay,
             month : currentMonth,
             year : currentYear
         })
-        
+        setSelectedMonthGaps(getDay(new Date(startingDayOfMonth)));
     },[currentDay,currentMonth,currentYear]);
 
-    return (
+    return (<>
         <div className='bg-zinc-900 max-w-[80dvw] max-h-fit py-7 mx-auto rounded-3xl'>
             <CalendarHeader 
             month={currentMonth}
@@ -55,10 +62,16 @@ const Calendar = () => {
 
             <CalendarBody 
             day={currentDay}
-            startingDayOfMonth={startingDayOfMonth} 
-            endingDayOfMonth={endingDayOfMonth} 
+            numberOfDays={numberOfDays}
+            selectedMonthGaps={selectedMonthGaps}
+            checkCurrentDate={selectedMonthDirection.counter} //prop to check if the current date of the current month is selected
+            // setSelectedDate={setSelectedDate}
+            // selectedDate={selectedDate}
             />
+
         </div>
+        {/* <EventSidePanel /> */}
+    </>
     )
 }
 
