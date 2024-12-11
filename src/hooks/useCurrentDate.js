@@ -1,13 +1,23 @@
-import { useState } from "react";
-import { format, getMonth, startOfMonth } from "date-fns";
+import { useState,useEffect } from "react";
+import { endOfMonth, format, startOfMonth,addMonths, subMonths } from "date-fns";
 
-export default function useCurrentDate(){
-    const [currentDay, setCurrentDay] = useState(format(new Date(),'dd'));
-    const [currentMonth, setCurrentMonth] = useState(format(new Date(),'MMMM'));
-    const [currentYear, setCurrentYear] = useState(format(new Date(),'yyyy'));
-    const [startingDayOfMonth,setStartingOfMonth] = useState(startOfMonth(new Date));
-    const [endingDayOfMonth,setEndingOfMonth] = useState(startOfMonth(new Date()));
-    const [monthIndex, setMonthIndex] = useState(getMonth(new Date()));
+export default function useCurrentDate(selectedMonthDirection){
+    const [currentDate , setCurrentDate] = useState(new Date());
 
-    return {currentDay,currentMonth,currentYear,startingDayOfMonth,endingDayOfMonth,monthIndex};
+    const currentDay = format(currentDate,'dd');
+    const currentMonth= format(currentDate,'MMMM');
+    const currentYear = format(currentDate,'yyyy');
+    const startingDayOfMonth= startOfMonth(currentDate);
+    const endingDayOfMonth = endOfMonth(currentDate);
+    
+    useEffect(() => {
+        if(selectedMonthDirection.direction === "prev"){
+            setCurrentDate((prevDate) => subMonths(prevDate,1));
+        }
+        else if(selectedMonthDirection.direction === "next"){
+            setCurrentDate((prevDate) => addMonths(prevDate,1));
+        }
+    },[selectedMonthDirection])
+    
+    return {currentDay,currentMonth,currentYear,startingDayOfMonth,endingDayOfMonth};
 }

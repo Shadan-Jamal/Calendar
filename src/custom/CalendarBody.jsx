@@ -1,7 +1,7 @@
 import React from 'react'
 import CalendarGrid from './CalendarGrid'
 
-const CalendarBody = ({day, startingDayOfMonth, endingDayOfMonth, monthIndex}) => {
+const CalendarBody = ({day, startingDayOfMonth, endingDayOfMonth}) => {
   return (
     <div className='w-full max-h-[75%]'>
       <CalendarGrid 

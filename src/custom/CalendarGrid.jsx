@@ -6,7 +6,7 @@ const WEEKDAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
 const CalendarGrid = ({day, startingDayOfMonth, endingDayOfMonth}) => {
     const [days,setDays] = useState(Array(31).fill(null).map((_,index) => index+1));
-
+    console.log(day,startingDayOfMonth,endingDayOfMonth)
     return (
         <div className='grid grid-cols-7 auto-rows-max gap-y-7 place-content-center place-items-center'>
             {WEEKDAYS.map((weekDay) => {
