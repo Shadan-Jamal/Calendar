@@ -1,7 +1,7 @@
 # Calendar App
 A modern calendar application built with React, Vite, and Tailwind CSS.
 
-Features:-
+# Features:-
   An interactive calendar grid that displays the days of the month.
   
   A header that displays the current month and year, with navigation buttons to move to previous and next months and previous and next years.
@@ -12,14 +12,14 @@ Features:-
   
   A sheet for viewing and removing events for a selected date.
 
-Local storage for storing events:-
+# Local storage for storing events:-
   1. Running the App Locally
   2. Clone the repository: git clone https://github.com/your-username/calendar-app.git
   3. Install dependencies: npm install or yarn install
   4. Start the development server: npm run dev or yarn dev
   5. Open your web browser and navigate to http://localhost:3000
 
-Project Structure:-
+# Project Structure:-
 
   src: contains the source code for the application
   
@@ -33,7 +33,7 @@ Project Structure:-
   
   lib: contains utility functions
 
-Technologies Used:-
+# Technologies Used:-
 
   React: for building the user interface
   
@@ -47,7 +47,7 @@ Technologies Used:-
   
   motion: for animations
 
-Contributing:-
+# Contributing:-
 
 Contributions are welcome! Please submit a pull request with a clear description of the changes you've made.
 
