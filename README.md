@@ -12,12 +12,11 @@ A modern calendar application built with React, Vite, and Tailwind CSS.
   
   - A sheet for viewing and removing events for a selected date.
 
-# Local storage for storing events:-
-  1. Running the App Locally
-  2. Clone the repository: git clone https://github.com/your-username/calendar-app.git
-  3. Install dependencies: npm install or yarn install
-  4. Start the development server: npm run dev or yarn dev
-  5. Open your web browser and navigate to http://localhost:3000
+# Running the App Locally:-
+  1. Clone the repository: git clone [url]
+  2. Install dependencies: npm install or yarn install
+  3. Start the development server: npm run dev or yarn dev
+  4. Open your web browser and navigate to http://localhost:5173
 
 # Project Structure:-
 
