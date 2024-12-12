@@ -33,26 +33,19 @@ const Calendar = () => {
 
     //function to change the month
     const changeMonth = (dir) => {
-        if(dir === "prev"){
+
+        if(dir === "prev" || dir === "prevYear){
             setSelectedMonthDirection((prev) => {
                 return {...prev, counter : prev.counter - 1, direction : dir}
             });
         }
-        else if(dir === "prevYear"){
-            setSelectedMonthDirection((prev) => {
-                return {...prev, counter : prev.counter - 1, direction : dir}
-            })
-        }
-        else if(dir === "next"){
+      
+        else if(dir === "next" || dir === "nextYear){
             setSelectedMonthDirection((prev) => {
                 return {...prev, counter : prev.counter + 1, direction : dir}
             });
         }
-        else if(dir === "nextYear"){
-            setSelectedMonthDirection((prev) => {
-                return {...prev, counter : prev.counter + 1, direction : dir}
-            })
-        }
+
         else{
             setSelectedMonthDirection((prev) => {
                 return {...prev, counter : 0, direction : ""}
