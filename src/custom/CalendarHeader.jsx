@@ -15,6 +15,7 @@ const CalendarHeader = ({month,year,changeMonth}) => {
               {`${month}, ${year}`}
             </h1>
         </div>
+        {/* buttons for changing year or month */}
         <div className='space-x-3'>
             <Button variant="secondary" onClick={() => changeMonth("prevYear")}> <FaAngleDoubleLeft size={"1rem"}/> </Button>
             <Button variant="secondary" onClick={() => changeMonth("prev")}> <FaAngleLeft size={"1rem"}/> </Button>

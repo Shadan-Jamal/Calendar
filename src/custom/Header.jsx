@@ -3,6 +3,7 @@ import Note from './Note'
 import { useContext } from 'react'
 import { EventPanelContext } from '@/context/EventPanelContext'
 import { Button } from '@/components/ui/button'
+
 const Header = () => {
   const {openEventPanel} = useContext(EventPanelContext);
   return (

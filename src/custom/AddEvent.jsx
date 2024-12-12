@@ -5,12 +5,14 @@ import {
     DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
+
   import { useState } from "react";
   import { IoMdAdd } from "react-icons/io";
   import { Input } from "@/components/ui/input";
   import { Button } from "@/components/ui/button";
 
-const AddEvent = ({addEvents}) => {
+//This component is a popup dialog for adding an event in the side panel
+const AddEvent = ({addEvents}) => { 
     const [inputValues, setInputValues] = useState({
         title : "",
         description : "",

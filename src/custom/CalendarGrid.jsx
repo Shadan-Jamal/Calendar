@@ -9,7 +9,7 @@ import PopupForEventEntry from "./PopupForEventEntry";
 import EventListForSelectedDate from "./EventListForSelectedDate";
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
-import clsx from "clsx";
+import clsx from "clsx"; //package for adding classes based on conditions
 import { getDate } from "date-fns";
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];

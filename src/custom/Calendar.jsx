@@ -6,14 +6,19 @@ import { getDay, getMonth, getYear } from "date-fns";
 
 const DAYS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
+//Parent Caledar component that will have the header and the grid.
 const Calendar = () => {
-    const [currentDate,setCurrentDate] = useState({ 
+    //state for storing today's date
+    const [currentDate,setCurrentDate] = useState({  
         day : getDay(new Date()), 
         month : getMonth(new Date()), 
         year: getYear(new Date())
     });
 
+    //state for changin month
     const [selectedMonthDirection,setSelectedMonthDirection] = useState({counter : 0 , direction : ""})
+
+    //custom hook for getting current date details
     const {
         currentDay,
         currentMonth,
@@ -21,10 +26,12 @@ const Calendar = () => {
         startingDayOfMonth,
         numberOfDays } = useCurrentDate(selectedMonthDirection);
         
+    //prefixed number of gaps at the starting of the month
     const [selectedMonthGaps,setSelectedMonthGaps] = useState(
         getDay(new Date())
     );
 
+    //function to change the month
     const changeMonth = (dir) => {
         if(dir === "prev"){
             setSelectedMonthDirection((prev) => {
