@@ -7,7 +7,7 @@ import { EventPanelProvider } from '@/context/EventPanelContext';
 const App = () => {
   return (
     <EventPanelProvider>
-      <div className='w-screen h-[100dvh] bg-zinc-700 overflow-x-hidden'>
+      <div className='w-[100dvw] h-[100dvh] bg-zinc-700 overflow-x-hidden'>
         <Header />
         <Calendar />
         <EventSidePanel />

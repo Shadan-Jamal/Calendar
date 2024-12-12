@@ -42,7 +42,7 @@ const EventListForSelectedDate = ({eventList,setEventList, idForSelectedDate}) =
             <SheetTitle className="w-full text-start font-bold text-3xl">
               Events for {eventDate.current}
             </SheetTitle>
-            <SheetDescription className="p-4">
+            <SheetDescription className="p-1 overflow-scroll">
                 {events.map((e, index) => {
                     const details = Object.values(e);
                     return (

@@ -63,7 +63,7 @@ const Calendar = () => {
     },[currentDay,currentMonth,currentYear]);
     
     return (<>
-        <div className='bg-zinc-900 max-w-[80dvw] max-h-fit py-7 mx-auto rounded-3xl'>
+        <div className='bg-zinc-900 max-w-[95dvw] lg:max-w-[80dvw] max-h-fit py-7 mx-auto rounded-3xl'>
             <CalendarHeader 
             month={currentMonth}
             year={currentYear}
