@@ -18,7 +18,7 @@ const Calendar = () => {
     //state for changin month
     const [selectedMonthDirection,setSelectedMonthDirection] = useState({counter : 0 , direction : ""})
 
-    //custom hook for getting current date details
+    //custom hook for getting current month details
     const {
         currentDay,
         currentMonth,
