@@ -2,15 +2,15 @@
 A modern calendar application built with React, Vite, and Tailwind CSS.
 
 # Features:-
-  An interactive calendar grid that displays the days of the month.
+  - An interactive calendar grid that displays the days of the month.
   
-  A header that displays the current month and year, with navigation buttons to move to previous and next months and previous and next years.
+  - A header that displays the current month and year, with navigation buttons to move to previous and next months and previous and next years.
   
-  A side panel that can add and remove events.
+  - A side panel that can add and remove events.
   
-  A popup dialog for adding and removing.
+  - A popup dialog for adding and removing.
   
-  A sheet for viewing and removing events for a selected date.
+  - A sheet for viewing and removing events for a selected date.
 
 # Local storage for storing events:-
   1. Running the App Locally
@@ -21,29 +21,29 @@ A modern calendar application built with React, Vite, and Tailwind CSS.
 
 # Project Structure:-
 
-  src: contains the source code for the application
+- src: contains the source code for the application
   
-  components: contains reusable shadcn components
+- components: contains reusable shadcn components
   
-  custom: contains custom components specific to the calendar app
+- custom: contains custom components specific to the calendar app
   
-  context: contains context providers for managing state
+- context: contains context providers for managing state
   
-  hooks: contains custom React hooks
+- hooks: contains custom React hooks
   
-  lib: contains utility functions
+- lib: contains utility functions
 
 # Technologies Used:-
 
-  React: for building the user interface
+ - React: for building the user interface
   
-  Vite: for building and serving the application
+ - Vite: for building and serving the application
   
-  Tailwind CSS: for styling the application
+ - Tailwind CSS: for styling the application
   
-  date-fns: for working with dates
+ - date-fns: for working with dates
   
-  shadcn: for building reusable UI components
+ - shadcn: for building reusable UI components
   
   motion: for animations
 
