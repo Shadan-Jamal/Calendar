@@ -16,7 +16,8 @@ const AddEvent = ({addEvents}) => {
     const [inputValues, setInputValues] = useState({
         title : "",
         description : "",
-        timings : ""
+        timings : "",
+        date: ""
     })
 
     const handleClick = () => {
@@ -48,6 +49,12 @@ const AddEvent = ({addEvents}) => {
             value={inputValues.timings} 
             onChange={(e) => setInputValues({...inputValues, timings : e.target.value})} 
             placeholder="Timings" 
+            />
+
+            <Input
+            value={inputValues.date} 
+            onChange={(e) => setInputValues({...inputValues, date : e.target.value})} 
+            placeholder="Date"
             />
             <Button onClick={handleClick}>Add</Button>
         </DialogContent>

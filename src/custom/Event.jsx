@@ -7,7 +7,7 @@ import {motion} from "motion/react"
 import { RxCross1 } from "react-icons/rx";
 
 const Event = ({details, key, deleteEvent}) => {
-    const {title, description, timings} = details;
+    const {title, description, timings,date} = details;
 
     const deleteItem= (title) => {
         deleteEvent((prev) => prev.filter((item) => item.title != title))
@@ -30,6 +30,9 @@ const Event = ({details, key, deleteEvent}) => {
             </div>
             <div className="text-white font-bold text-sm font-serif block w-full text-start">
                 {timings}
+            </div>
+            <div className="text-white font-bold text-sm font-serif block w-full text-start">
+                {date}
             </div>
         </CollapsibleContent>
     </Collapsible>
